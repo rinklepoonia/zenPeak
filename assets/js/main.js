@@ -1,164 +1,165 @@
- $("#logo-slider").slick({
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 0,
-            speed: 3000,
-            pauseOnHover: false,
-            variableWidth: true,
-            cssEase: "linear",
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 5,
-                    },
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3,
-                    },
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 2,
-                    },
-                },
-            ],
- });
-        
-      $(".team-slider").slick({
-            dots: false,
-            infinite: false,
-            autoplay: false,
-            cssEase: "linear",
-          autoplaySpeed: 1000,
-            speed: 1000,
-          slidesToShow: 3,
-             arrows: true,
-            slidesToScroll: 1,
-            prevArrow: ".prev",
-          nextArrow: ".next",
-            responsive: [
-                {
-                    breakpoint: 1025,
-                    settings: {
-                        slidesToShow: 2,
-                        dots: true,
-                    },
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1.59,
-                        dots: true,
-                    },
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1,
-                        dots: true,
-                    },
-                },
-            ],
+$("#logo-slider").slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 0,
+  speed: 3000,
+  pauseOnHover: false,
+  variableWidth: true,
+  cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+  ],
+});
+
+$(".team-slider").slick({
+  dots: false,
+  loop: true,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 3,
+  arrows: true,
+  slidesToScroll: 1,
+  prevArrow: ".prev",
+  nextArrow: ".next",
+  responsive: [
+    {
+      breakpoint: 1025,
+      settings: {
+        slidesToShow: 3,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1.59,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        dots: true,
+      },
+    },
+  ],
+});
+
+// ===============================bio =============================
+function initializeBioToggle() {
+  document.querySelectorAll('[data-toggle="bio"]').forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetId = button.getAttribute("data-target");
+      const bioInfo = document.getElementById(targetId);
+      document.querySelectorAll('[id^="bioInfo"]').forEach((bio) => {
+        if (bio !== bioInfo) {
+          bio.classList.add("opacity-0", "translate-y-[-20px]", "invisible");
+          bio.classList.remove("opacity-100", "translate-y-0");
+        }
       });
 
-    // ===============================bio =============================
- function initializeBioToggle() {
-        document.querySelectorAll('[data-toggle="bio"]').forEach(button => {
-            button.addEventListener("click", function() {
-                const targetId = button.getAttribute("data-target");
-                const bioInfo = document.getElementById(targetId);
-            document.querySelectorAll('[id^="bioInfo"]').forEach(bio => {
-                if (bio !== bioInfo) {
-                    bio.classList.add("opacity-0", "translate-y-[-20px]", "invisible");
-                    bio.classList.remove("opacity-100", "translate-y-0");
-                }
-            });
+      bioInfo.classList.toggle("opacity-0");
+      bioInfo.classList.toggle("translate-y-[-20px]");
+      bioInfo.classList.toggle("invisible");
+      bioInfo.classList.toggle("opacity-100");
+      bioInfo.classList.toggle("translate-y-0");
+    });
+  });
+  document.querySelectorAll('[data-close="bio"]').forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetId = button.getAttribute("data-target");
+      const bioInfo = document.getElementById(targetId);
+      bioInfo.classList.add("opacity-0", "translate-y-[-20px]", "invisible");
+      bioInfo.classList.remove("opacity-100", "translate-y-0");
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", initializeBioToggle);
 
-                bioInfo.classList.toggle("opacity-0");
-                bioInfo.classList.toggle("translate-y-[-20px]");
-                bioInfo.classList.toggle("invisible");
-                bioInfo.classList.toggle("opacity-100");
-                bioInfo.classList.toggle("translate-y-0");
-            });
-        });
-        document.querySelectorAll('[data-close="bio"]').forEach(button => {
-            button.addEventListener("click", function() {
-                const targetId = button.getAttribute("data-target");
-                const bioInfo = document.getElementById(targetId);
-                bioInfo.classList.add("opacity-0", "translate-y-[-20px]", "invisible");
-                bioInfo.classList.remove("opacity-100", "translate-y-0");
-            });
-        });
-    }
-    document.addEventListener("DOMContentLoaded", initializeBioToggle);
-
-      // ACCORDIAN
+// ACCORDIAN
 document
-    .querySelectorAll(".accordion-header-why-choose")
-    .forEach((header, index) => {
-        header.addEventListener("click", () => {
-            const item = header.parentElement;
-            const contentWrapper = item.querySelector(".accordion-content-wrapper");
-            const currentlyActive = document.querySelectorAll(".accordion-item-why-choose.active");
+  .querySelectorAll(".accordion-header-why-choose")
+  .forEach((header, index) => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      const contentWrapper = item.querySelector(".accordion-content-wrapper");
+      const currentlyActive = document.querySelectorAll(
+        ".accordion-item-why-choose.active"
+      );
 
-            // Check if item is active
-            if (item.classList.contains("active") && currentlyActive.length === 1) {
-                return;
-            }
+      // Check if item is active
+      if (item.classList.contains("active") && currentlyActive.length === 1) {
+        return;
+      }
 
-            // If item is active, remove it, and reset overflow
-            if (item.classList.contains("active")) {
-                item.classList.remove("active");
-                contentWrapper.style.overflow = "hidden"; // Reset overflow to hidden when closing
-            } else {
-                // Close all active items and reset their overflow
-                currentlyActive.forEach((activeItem) => {
-                    activeItem.classList.remove("active");
-                    activeItem.querySelector(".accordion-content-wrapper").style.overflow = "hidden";
-                });
-                
-                // Open the clicked item and remove overflow hidden
-                item.classList.add("active");
-                contentWrapper.style.overflow = "visible"; // Remove overflow hidden when opening
-            }
+      // If item is active, remove it, and reset overflow
+      if (item.classList.contains("active")) {
+        item.classList.remove("active");
+        contentWrapper.style.overflow = "hidden"; // Reset overflow to hidden when closing
+      } else {
+        // Close all active items and reset their overflow
+        currentlyActive.forEach((activeItem) => {
+          activeItem.classList.remove("active");
+          activeItem.querySelector(
+            ".accordion-content-wrapper"
+          ).style.overflow = "hidden";
         });
 
-        // Optionally, open the first accordion by default
-        if (index === 0) {
-            header.parentElement.classList.add("active");
-            header.parentElement.querySelector(".accordion-content-wrapper").style.overflow = "visible";
-        }
+        // Open the clicked item and remove overflow hidden
+        item.classList.add("active");
+        contentWrapper.style.overflow = "visible"; // Remove overflow hidden when opening
+      }
     });
 
+    // Optionally, open the first accordion by default
+    if (index === 0) {
+      header.parentElement.classList.add("active");
+      header.parentElement.querySelector(
+        ".accordion-content-wrapper"
+      ).style.overflow = "visible";
+    }
+  });
+
 // back-to-top
-     let mybutton = document.getElementById("top-button");
+let mybutton = document.getElementById("top-button");
 
-        // Corrected function name
-        function topFunction() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+// Corrected function name
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 20 ||
-                document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 
-        // Attach scrollFunction to the window's scroll event
-        window.onscroll = function () {
-            scrollFunction();
+// Attach scrollFunction to the window's scroll event
+window.onscroll = function () {
+  scrollFunction();
 };
-        
+
 // =========================YEAR FUNCTION===============
 function setCurrentYear() {
   const yearSpan = document.getElementById("current-year");
