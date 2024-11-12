@@ -68,9 +68,7 @@
 }
 
 @media (min-width: 576px) {
-    .team-slider .slick-track {
-        height: 546px;
-    }
+ 
 
     .accordion-item-why-choose.active .accordion-header-why-choose {
         padding: 26px 33px 0px 26px !important;
