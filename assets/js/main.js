@@ -31,16 +31,16 @@
         
       $(".team-slider").slick({
             dots: false,
-            infinite: true,
+            infinite: false,
             autoplay: false,
             cssEase: "linear",
-            autoplaySpeed: 1000,
+          autoplaySpeed: 1000,
             speed: 1000,
           slidesToShow: 3,
              arrows: true,
             slidesToScroll: 1,
             prevArrow: ".prev",
-            nextArrow: ".next",
+          nextArrow: ".next",
             responsive: [
                 {
                     breakpoint: 1025,
@@ -65,7 +65,37 @@
                 },
             ],
       });
-      
+
+    // ===============================bio =============================
+ function initializeBioToggle() {
+        document.querySelectorAll('[data-toggle="bio"]').forEach(button => {
+            button.addEventListener("click", function() {
+                const targetId = button.getAttribute("data-target");
+                const bioInfo = document.getElementById(targetId);
+            document.querySelectorAll('[id^="bioInfo"]').forEach(bio => {
+                if (bio !== bioInfo) {
+                    bio.classList.add("opacity-0", "translate-y-[-20px]", "invisible");
+                    bio.classList.remove("opacity-100", "translate-y-0");
+                }
+            });
+
+                bioInfo.classList.toggle("opacity-0");
+                bioInfo.classList.toggle("translate-y-[-20px]");
+                bioInfo.classList.toggle("invisible");
+                bioInfo.classList.toggle("opacity-100");
+                bioInfo.classList.toggle("translate-y-0");
+            });
+        });
+        document.querySelectorAll('[data-close="bio"]').forEach(button => {
+            button.addEventListener("click", function() {
+                const targetId = button.getAttribute("data-target");
+                const bioInfo = document.getElementById(targetId);
+                bioInfo.classList.add("opacity-0", "translate-y-[-20px]", "invisible");
+                bioInfo.classList.remove("opacity-100", "translate-y-0");
+            });
+        });
+    }
+    document.addEventListener("DOMContentLoaded", initializeBioToggle);
 
       // ACCORDIAN
 document
