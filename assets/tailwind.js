@@ -34,16 +34,18 @@ tailwind.config = {
         padding: "20px",
           },
           backgroundImage: {
-            "hero": ` url('./assets/images/png/hero-bg.png')`,
-            "small-hero": ` url('./assets/images/png/small-hero.png')`,
-            "footer": ` url('./assets/images/png/footer-bg.png')`,
-            "small-footer": ` url('./assets/images/png/small-footer.png')`,
+            "hero": ` url('./assets/images/webp/hero-bg.webp')`,
+            "small-hero": ` url('./assets/images/webp/small-hero.webp')`,
+            "footer": ` url('./assets/images/webp/footer-bg.webp')`,
+            "small-footer": ` url('./assets/images/webp/small-footer.webp')`,
           },
           backgroundSize: {
               "full": "100% 100%",
       },
       boxShadow: {
         "brown": "0px 4px 31.4px 0px #DAAF95",
+        "dusty-brown": "0px 4px 31.4px 0px #A68272",
+
 
     
       }

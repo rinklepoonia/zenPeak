@@ -104,3 +104,27 @@ document
             header.parentElement.querySelector(".accordion-content-wrapper").style.overflow = "visible";
         }
     });
+
+// back-to-top
+     let mybutton = document.getElementById("top-button");
+
+        // Corrected function name
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // Attach scrollFunction to the window's scroll event
+        window.onscroll = function () {
+            scrollFunction();
+        };
