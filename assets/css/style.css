@@ -25,63 +25,14 @@
     }
 } */
 
-/*  */
-.accordion-item-why-choose {
-    overflow: hidden;
-    position: relative;
-}
-
-.accordion-item-why-choose.active {
-    border: 1px solid #A68272;
-    border-radius: 16px;
-    background: white;
-    height: 114px;
-    grid-template-rows: auto 1fr;
-}
-
 .accordion-header-why-choose {
     display: flex;
     align-items: center;
-    /* padding: 21px 30px; */
-    /* cursor: pointer; */
     user-select: none;
-    /* position: relative; */
-    /* transition: all 0.3s linear; */
-    /* height: 91px; */
-}
-
-
-.accordion-item-why-choose.active .accordion-header-why-choose {
-    padding: 13px 13px 0px 13px !important;
-    align-items: flex-start;
 }
 
 .icon-why-choose {
-    width: 73px;
-    height: 73px;
     margin-right: 30px;
-    border-radius: 12px;
-    position: relative;
-}
-
-.accordion-item-why-choose.active .icon-why-choose {
-    box-shadow: 0px 4px 31.4px 0px #5793E9;
-    background:
-        linear-gradient(180deg, #5E65D4 -9.38%, #5692E8 55.41%);
-}
-
-.accordion-item-why-choose.active .icon-why-choose svg path {
-    fill: white;
-}
-
-.accordion-title {
-    flex-grow: 1;
-}
-
-
-.accordion-content {
-    padding: 0 20px 20px;
-    color: #888;
 }
 
 .accordion-item-why-choose {
@@ -95,7 +46,28 @@
     overflow: hidden;
 }
 
+.accordion-item-why-choose.active .icon-why-choose {
+    box-shadow: 0px 4px 31.4px 0px #5793E9;
+    background:
+        linear-gradient(180deg, #5E65D4 -9.38%, #5692E8 55.41%);
+}
 
+.accordion-item-why-choose.active {
+    border: 1px solid #A68272;
+    border-radius: 16px;
+    background: white;
+    height: 114px;
+    grid-template-rows: auto 1fr;
+}
+
+.accordion-item-why-choose.active .icon-why-choose svg path {
+    fill: white;
+}
+
+.accordion-item-why-choose.active .accordion-header-why-choose {
+    padding: 13px 13px 0px 13px !important;
+    align-items: flex-start;
+}
 
 .accordion-item-why-choose.active .accordion-title {
     font-size: 24px;
@@ -105,19 +77,6 @@
 .accordion-item-why-choose.active .accordion-content {
     margin-top: -13px;
 }
-
-/* slider */
-.slick-slide .slick-current {
-    margin-top: 122px !important;
-}
-
-/* .slick-slide .slick-current :active {
-    margin-top: 122px !important;
-}
-
-.slick-slide .slick-active {
-    margin-top: 200px;
-} */
 
 @media (min-width:576px) {
     .team-slider .slick-track {
