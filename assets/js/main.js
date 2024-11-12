@@ -127,4 +127,13 @@ document
         // Attach scrollFunction to the window's scroll event
         window.onscroll = function () {
             scrollFunction();
-        };
+};
+        
+// =========================YEAR FUNCTION===============
+function setCurrentYear() {
+  const yearSpan = document.getElementById("current-year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+}
+document.addEventListener("DOMContentLoaded", setCurrentYear);
