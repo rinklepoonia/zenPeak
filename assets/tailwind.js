@@ -20,9 +20,6 @@ tailwind.config = {
               "custom-xs": "8.37px",
          
       },
-    //   borderRadius: {
-    //     "custom-xs": "10px",
-    //   },
           lineHeight: {
           112:"112%",
           114: "114%",

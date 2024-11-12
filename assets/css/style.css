@@ -19,20 +19,10 @@
     display: none !important;
 }
 
-/* @media (min-width:1200px) {
-    .slick-list {
-        width: 1180px !important;
-    }
-} */
-
 .accordion-header-why-choose {
     display: flex;
     align-items: center;
     user-select: none;
-}
-
-.icon-why-choose {
-    margin-right: 30px;
 }
 
 .accordion-item-why-choose {
@@ -56,7 +46,7 @@
     border: 1px solid #A68272;
     border-radius: 16px;
     background: white;
-    height: 114px;
+    height: 101px;
     grid-template-rows: auto 1fr;
 }
 
