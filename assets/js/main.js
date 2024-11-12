@@ -28,7 +28,6 @@ $("#logo-slider").slick({
     },
   ],
 });
-
 $(".team-slider").slick({
   dots: false,
   loop: true,
@@ -63,7 +62,6 @@ $(".team-slider").slick({
     },
   ],
 });
-
 // ===============================bio =============================
 function initializeBioToggle() {
   document.querySelectorAll('[data-toggle="bio"]').forEach((button) => {
@@ -76,7 +74,6 @@ function initializeBioToggle() {
           bio.classList.remove("opacity-100", "translate-y-0");
         }
       });
-
       bioInfo.classList.toggle("opacity-0");
       bioInfo.classList.toggle("translate-y-[-20px]");
       bioInfo.classList.toggle("invisible");
@@ -94,7 +91,6 @@ function initializeBioToggle() {
   });
 }
 document.addEventListener("DOMContentLoaded", initializeBioToggle);
-
 // ACCORDIAN
 document
   .querySelectorAll(".accordion-header-why-choose")
@@ -105,12 +101,10 @@ document
       const currentlyActive = document.querySelectorAll(
         ".accordion-item-why-choose.active"
       );
-
       // Check if item is active
       if (item.classList.contains("active") && currentlyActive.length === 1) {
         return;
       }
-
       // If item is active, remove it, and reset overflow
       if (item.classList.contains("active")) {
         item.classList.remove("active");
@@ -123,13 +117,11 @@ document
             ".accordion-content-wrapper"
           ).style.overflow = "hidden";
         });
-
         // Open the clicked item and remove overflow hidden
         item.classList.add("active");
         contentWrapper.style.overflow = "visible"; // Remove overflow hidden when opening
       }
     });
-
     // Optionally, open the first accordion by default
     if (index === 0) {
       header.parentElement.classList.add("active");
@@ -138,15 +130,12 @@ document
       ).style.overflow = "visible";
     }
   });
-
 // back-to-top
 let mybutton = document.getElementById("top-button");
-
 // Corrected function name
 function topFunction() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -154,12 +143,10 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
 // Attach scrollFunction to the window's scroll event
 window.onscroll = function () {
   scrollFunction();
 };
-
 // =========================YEAR FUNCTION===============
 function setCurrentYear() {
   const yearSpan = document.getElementById("current-year");
