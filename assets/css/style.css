@@ -20,31 +20,34 @@
 }
 
 .team-slider .slick-slide {
-    @apply !px-[9.5px];
+    padding-left: 9.5em;
+    padding-right: 9.5em;
 }
 
 .team-slider .slick-track {
-    @apply min-h-[580px];
+    min-height: 580px;
 }
 
 .team-slider .slick-track .slick-active {
-    @apply !justify-start !transition-all !duration-300 !ease-linear !translate-y-[17%];
+    justify-content: start !important;
+    transition: all 300 linear !important;
+    transform: translateY(17%) !important;
 }
 
 .team-slider .slick-track .slick-active+.slick-active {
-    @apply !transition-all !duration-300 !ease-linear !translate-y-[17%] !scale-[1];
+    transition: all 300 linear !important;
+    transform: translateY(17%) scale(1) !important;
 }
 
 .team-slider .slick-track .slick-active+.slick-active+.slick-active {
-    @apply !transition-all !duration-300 !ease-linear !translate-y-[0];
+    transition: all 300 linear !important;
+    transform: translateY(0) !important;
 }
 
 .team-slider .slick-track .slick-active+.slick-active+.slick-active+.slick-active {
     transform: translateY(11%) !important;
     transition: all linear 0.3s !important;
-    @apply !transition-all !duration-300 !ease-linear !translate-y-[11%];
 }
-
 
 .accordion-header-why-choose {
     display: flex;
