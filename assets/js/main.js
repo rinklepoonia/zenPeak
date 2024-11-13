@@ -1,36 +1,20 @@
-$("#logo-slider").slick({
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 0,
-  speed: 3000,
-  pauseOnHover: false,
-  variableWidth: true,
-  cssEase: "linear",
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 5,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-  ],
-});
+ $('#logo-slider').slick({
+            arrows: false,
+            dots: false,
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            variableWidth: true,
+            slidesToShow: 5,
+            autoplay: true,
+            autoplaySpeed: 0,
+            speed: 2000,
+            pauseOnHover: false,
+            cssEase: 'linear',
+        });
 $(".team-slider").slick({
   dots: false,
-  loop: true,
+  loop: false,
   infinite: true,
   speed: 1000,
   slidesToShow: 3,
@@ -47,9 +31,9 @@ $(".team-slider").slick({
       },
     },
     {
-      breakpoint: 768,
+      breakpoint: 992,
       settings: {
-        slidesToShow: 1.59,
+        slidesToShow: 2,
         dots: true,
       },
     },
@@ -101,28 +85,23 @@ document
       const currentlyActive = document.querySelectorAll(
         ".accordion-item-why-choose.active"
       );
-      // Check if item is active
       if (item.classList.contains("active") && currentlyActive.length === 1) {
         return;
       }
-      // If item is active, remove it, and reset overflow
       if (item.classList.contains("active")) {
         item.classList.remove("active");
-        contentWrapper.style.overflow = "hidden"; // Reset overflow to hidden when closing
+        contentWrapper.style.overflow = "hidden";
       } else {
-        // Close all active items and reset their overflow
         currentlyActive.forEach((activeItem) => {
           activeItem.classList.remove("active");
           activeItem.querySelector(
             ".accordion-content-wrapper"
           ).style.overflow = "hidden";
         });
-        // Open the clicked item and remove overflow hidden
         item.classList.add("active");
-        contentWrapper.style.overflow = "visible"; // Remove overflow hidden when opening
+        contentWrapper.style.overflow = "visible";
       }
     });
-    // Optionally, open the first accordion by default
     if (index === 0) {
       header.parentElement.classList.add("active");
       header.parentElement.querySelector(
@@ -132,7 +111,6 @@ document
   });
 // back-to-top
 let mybutton = document.getElementById("top-button");
-// Corrected function name
 function topFunction() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }

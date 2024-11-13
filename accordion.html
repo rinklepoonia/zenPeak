@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/tailwind.js"></script>
+    <style>
+        .accordion-container {
+            width: 100%;
+            max-width: 558px;
+        }
+
+        .accordion-item-why-choose {
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            width: 100%;
+            background: linear-gradient(315.97deg,
+                    rgba(255, 255, 255, 0) 1.86%,
+                    rgba(255, 255, 255, 0.1) 99.45%);
+            margin-bottom: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .accordion-item-why-choose::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(135.38deg,
+                    rgba(255, 255, 255, 0.1) 0.59%,
+                    rgba(255, 255, 255, 0) 99.41%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .accordion-item-why-choose.active::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 1px;
+            background: linear-gradient(135.38deg,
+                    rgba(255, 255, 255, 0.6) 0.59%,
+                    rgba(255, 255, 255, 0) 99.41%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .accordion-header-why-choose {
+            display: flex;
+            align-items: center;
+            padding: 21px;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            transition: all 0.3s linear;
+        }
+
+        .accordion-item-why-choose.active .accordion-header-why-choose {
+            padding: 20px 20px 0px 20px !important;
+        }
+
+        .icon-why-choose {
+            margin-right: 23px;
+            border-radius: 12px;
+            background: #f7ef8a1a;
+            position: relative;
+        }
+
+        .icon-why-choose::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            background: linear-gradient(90deg,
+                    rgba(174, 134, 37, 0.6) 0%,
+                    rgba(247, 239, 138, 0.6) 33.73%,
+                    rgba(210, 172, 71, 0.6) 72.49%,
+                    rgba(237, 201, 103, 0.6) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .accordion-item-why-choose.active .icon-why-choose {
+            box-shadow: 0px 0px 14.7px 0px #ae862566;
+        }
+
+        .accordion-title {
+            flex-grow: 1;
+            font-family: "Lucida", sans-serif !important;
+        }
+
+        .accordion-content {
+            padding: 0 20px 20px;
+            color: #888;
+        }
+
+        .accordion-item-why-choose {
+            display: grid;
+            grid-template-rows: auto 0fr;
+            transition: grid-template-rows 0.3s linear;
+            overflow: hidden;
+            border-radius: 120px;
+        }
+
+        .accordion-item-why-choose.active {
+            grid-template-rows: auto 1fr;
+            border-radius: 16px;
+        }
+
+        .accordion-content-wrapper {
+            overflow: hidden;
+        }
+
+        .faq-padding {
+            padding: 10px 22px;
+        }
+
+        .accordion-item-why-choose.active .icon-why-choose {
+            width: 73px;
+            height: 73px;
+            box-shadow: 0px 4px 31.4px 0px #5793E9;
+            background: linear-gradient(180deg, #5E65D4 -9.38%, #5692E8 55.41%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-lg-0 mt-4 pt-3 pt-lg-0">
+        <div class="accordion-container">
+            <div class="accordion-item-why-choose border border-solid border-black">
+                <div class="accordion-header-why-choose">
+                    <div class="icon-why-choose d-flex align-items-center justify-content-center">
+                        <img src="./assets/images/svg/fortune.svg" alt="settings icon" />
+                    </div>
+                    <div class="accordion-title mb-0 text-color-dark-theme fs-2xl leading-120 ff-lucida clr-dark-black">
+                        Cost Savings
+                    </div>
+                </div>
+                <div class="accordion-content-wrapper">
+                    <div class="accordion-content">
+                        <p
+                            class="mb-0 fs-md leading-150 clr-light-gray-light-theme opacity-75 px-accordion text-nowrap">
+                            Across AWS, Azure, and GCP.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item-why-choose border border-solid border-black">
+                <div class="accordion-header-why-choose">
+                    <div class="icon-why-choose d-flex align-items-center justify-content-center">
+                        <img src="./assets/images/svg/fortune.svg" alt="target svg accordion" />
+                    </div>
+                    <div class="accordion-title mb-0 fs-2xl text-color-dark-theme leading-120 ff-lucida clr-dark-black">
+                        Focus on Core Objectives
+                    </div>
+                </div>
+                <div class="accordion-content-wrapper">
+                    <div class="accordion-content">
+                        <p class="mb-0 fs-md leading-150 clr-light-gray-light-theme opacity-75 px-accordion">
+                            Across AWS, Azure, and GCP.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item-why-choose border border-solid border-black">
+                <div class="accordion-header-why-choose">
+                    <div class="icon-why-choose d-flex align-items-center justify-content-center">
+                        <img src="./assets/images/svg/fortune.svg" alt="tick setting svg accordion" />
+                    </div>
+                    <div
+                        class="accordion-title mb-0 fs-2xl text-color-dark-theme leading-120 ff-lucida clr-dark-black text-nowrap">
+                        Accelerated Compliance
+                    </div>
+                </div>
+                <div class="accordion-content-wrapper">
+                    <div class="accordion-content">
+                        <p class="mb-0 fs-md leading-150 opacity-75 px-accordion clr-light-gray-light-theme">
+                            Across AWS, Azure, and GCP.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item-why-choose border border-solid border-black">
+                <div class="accordion-header-why-choose">
+                    <div class="icon-why-choose d-flex align-items-center justify-content-center">
+                        <img src="./assets/images/svg/fortune.svg" alt="warning setting svg accordion" />
+                    </div>
+                    <div class="accordion-title mb-0 text-color-dark-theme fs-2xl leading-120 ff-lucida clr-dark-black">
+                        Risk Reduction
+                    </div>
+                </div>
+                <div class="accordion-content-wrapper">
+                    <div class="accordion-content pl-[113px]">
+                        <p class="mb-0 fs-md leading-150 opacity-75 px-accordion clr-light-gray-light-theme mt-[-31px]">
+                            Pulvinar scelerisque viverra at donec nunc orci ullam corper penatibus crasigula praesent
+                            dictum fames suscipit nam.
+                            Fermentum praesent vel adipiscing eget dictum. Risus id tellus .
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document
+            .querySelectorAll(".accordion-header-why-choose")
+            .forEach((header, index) => {
+                header.addEventListener("click", () => {
+                    const item = header.parentElement;
+                    const contentWrapper = item.querySelector(".accordion-content-wrapper");
+                    const currentlyActive = document.querySelectorAll(
+                        ".accordion-item-why-choose.active"
+                    );
+                    if (item.classList.contains("active") && currentlyActive.length === 1) {
+                        return;
+                    }
+                    if (item.classList.contains("active")) {
+                        item.classList.remove("active");
+                        contentWrapper.style.overflow = "hidden";
+                    } else {
+                        currentlyActive.forEach((activeItem) => {
+                            activeItem.classList.remove("active");
+                            activeItem.querySelector(
+                                ".accordion-content-wrapper"
+                            ).style.overflow = "hidden";
+                        });
+                        item.classList.add("active");
+                        contentWrapper.style.overflow = "visible";
+                    }
+                });
+                if (index === 0) {
+                    header.parentElement.classList.add("active");
+                    header.parentElement.querySelector(
+                        ".accordion-content-wrapper"
+                    ).style.overflow = "visible";
+                }
+            });
+    </script>
+</body>
+
+</html>

@@ -43,6 +43,7 @@ tailwind.config = {
         "brown": "0px 4px 31.4px 0px #DAAF95",
         "dusty-brown": "0px 4px 31.4px 0px #A68272",
         "white": "0px 0px 3px 1px #fff",
+        "light-brown": "0px 0px 3px 1px #DAAF95",
       }
     },
   },

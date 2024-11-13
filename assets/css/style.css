@@ -5,6 +5,7 @@
     scroll-behavior: smooth;
 }
 
+
 #logo-slider .slick-track {
     display: flex;
     gap: 56px;
@@ -23,6 +24,7 @@
     display: flex;
     align-items: center;
     user-select: none;
+    transition: all 300ms linear !important;
 }
 
 .accordion-item-why-choose {
@@ -30,10 +32,18 @@
     grid-template-rows: auto 0fr;
     transition: grid-template-rows 0.3s linear;
     overflow: hidden;
+    transition: all 500ms linear;
 }
 
 .accordion-content-wrapper {
     overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 300ms ease-out;
+}
+
+.accordion-item-why-choose.active .accordion-content-wrapper {
+    transform: scaleY(1);
 }
 
 .accordion-item-why-choose.active .icon-why-choose {
@@ -68,10 +78,8 @@
 }
 
 @media (min-width: 576px) {
- 
-
     .accordion-item-why-choose.active .accordion-header-why-choose {
-        padding: 26px 33px 0px 26px !important;
+        padding: 26px 16px 0px 26px !important;
         align-items: flex-start;
     }
 }
