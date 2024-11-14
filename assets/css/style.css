@@ -130,3 +130,9 @@
         transform: translateY(11%) !important;
     }
 }
+
+@media (min-width:1200px) {
+    .team-slider .slick-list {
+        width: 1160px !important;
+    }
+}

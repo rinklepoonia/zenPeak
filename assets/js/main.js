@@ -15,7 +15,7 @@
 $(".team-slider").slick({
   dots: false,
   loop: false,
-  infinite: true,
+  infinite: false,
   speed: 1000,
   slidesToShow: 3,
   arrows: true,
@@ -46,6 +46,7 @@ $(".team-slider").slick({
     },
   ],
 });
+
 // ===============================bio =============================
 function initializeBioToggle() {
   document.querySelectorAll('[data-toggle="bio"]').forEach((button) => {
@@ -75,6 +76,7 @@ function initializeBioToggle() {
   });
 }
 document.addEventListener("DOMContentLoaded", initializeBioToggle);
+
 // ACCORDIAN
 document
   .querySelectorAll(".accordion-header-why-choose")
@@ -109,6 +111,7 @@ document
       ).style.overflow = "visible";
     }
   });
+
 // back-to-top
 let mybutton = document.getElementById("top-button");
 function topFunction() {
