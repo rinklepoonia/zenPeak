@@ -49,6 +49,7 @@
 .accordion-item-why-choose.active .icon-why-choose {
     box-shadow: 0px 4px 31.4px 0px #5793E9;
     background: linear-gradient(180deg, #5E65D4 -9.38%, #5692E8 55.41%);
+    margin-right: 15px;
 }
 
 .accordion-item-why-choose.active {
@@ -74,7 +75,7 @@
 }
 
 .accordion-item-why-choose.active .accordion-content {
-    margin-top: -13px;
+    margin-top: -9px;
 }
 
 @media (min-width: 576px) {
